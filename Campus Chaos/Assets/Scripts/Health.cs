@@ -34,6 +34,13 @@ public class Health : MonoBehaviour
         this.health = health;
     }
 
+    public IEnumerator VisualIndicator(Color color) {
+        Color prevColor = GetComponent<SpriteRenderer>().color;
+        GetComponent<SpriteRenderer>().color = color;
+        yield return new WaitForSeconds(0.2f);
+        GetComponent<SpriteRenderer>().color = prevColor;
+    }
+
     public void Damage(int amount)
     {
         if (amount < 0)
@@ -42,10 +49,13 @@ public class Health : MonoBehaviour
         }
 
         health = Mathf.Max(0, health - amount);
+
         if (health == 0)
         {
             Die();
         }
+
+        StartCoroutine(VisualIndicator(Color.red));
     }
 
     public void Heal(int amount)
@@ -56,6 +66,8 @@ public class Health : MonoBehaviour
         }
 
         health = Mathf.Min(health + amount, MAX_HEALTH);
+
+        StartCoroutine(VisualIndicator(Color.green));
     }
 
     private void Die()

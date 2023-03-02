@@ -32,10 +32,10 @@ public class PlayerAnimator : MonoBehaviour
     void SpriteDirectionChecker()
     {
         if(playerMovement.lastHorizontalVector <0){
-            spriteRenderer.flipX = true;
+            transform.localScale = new Vector3(-1f, transform.localScale.y);
         }
         else{
-            spriteRenderer.flipX = false;
+            transform.localScale = new Vector3(1f, transform.localScale.y);
         }
     }
 }
