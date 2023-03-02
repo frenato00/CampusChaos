@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5596339567345140775}
   - component: {fileID: 5596339567345140771}
   - component: {fileID: 5596339567345140774}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TeacherEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}

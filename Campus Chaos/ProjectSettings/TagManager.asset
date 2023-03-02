@@ -8,13 +8,13 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Border
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Obstacles
+  - Enemy
+  - Player
+  - Player_Border
   - 
   - 
   - 
