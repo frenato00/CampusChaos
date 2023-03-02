@@ -48,5 +48,6 @@ public class Enemy : MonoBehaviour
                 this.GetComponent<Health>().Damage(10000);
             }
         }
+        Debug.Log(collider);
     }
 }
