@@ -76,9 +76,9 @@ GameObject:
   - component: {fileID: 2652529795070208745}
   - component: {fileID: 2652529795070208758}
   - component: {fileID: 2652529795070208759}
-  - component: {fileID: 2652529795070208756}
   - component: {fileID: 2652529795070208757}
   - component: {fileID: 2652529795070208754}
+  - component: {fileID: 418066965896725859}
   m_Layer: 7
   m_Name: BatEnemy
   m_TagString: Untagged
@@ -230,6 +230,37 @@ MonoBehaviour:
   damage: 5
   speed: 1.5
   data: {fileID: 11400000, guid: a9b53390472e5a7c8b79b6a3cd8ea8b3, type: 2}
+--- !u!60 &418066965896725859
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2652529795070208755}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.5, y: 0.375}
+    newSize: {x: 0.5, y: 0.375}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.11688964, y: 0.18528146}
+      - {x: -0.22115965, y: 0.03897856}
+      - {x: -0.20987606, y: -0.14978531}
+      - {x: 0.21894108, y: -0.15422241}
+      - {x: 0.21672255, y: 0.063072756}
+      - {x: 0.13444668, y: 0.18306303}
 --- !u!1001 &820477446246821574
 PrefabInstance:
   m_ObjectHideFlags: 0

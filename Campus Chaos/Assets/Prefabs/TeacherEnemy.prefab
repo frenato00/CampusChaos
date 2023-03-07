@@ -76,9 +76,9 @@ GameObject:
   - component: {fileID: 5596339567345140770}
   - component: {fileID: 5596339567345140769}
   - component: {fileID: 5596339567345140768}
-  - component: {fileID: 5596339567345140775}
   - component: {fileID: 5596339567345140771}
   - component: {fileID: 5596339567345140774}
+  - component: {fileID: 3269148730512026980}
   m_Layer: 7
   m_Name: TeacherEnemy
   m_TagString: Untagged
@@ -230,6 +230,37 @@ MonoBehaviour:
   damage: 5
   speed: 1.5
   data: {fileID: 11400000, guid: af065a7c46f6c3879a777b4bbbede1e9, type: 2}
+--- !u!60 &3269148730512026980
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5596339567345140773}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.5, y: 0.375}
+    newSize: {x: 0.5, y: 0.375}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.11688964, y: 0.18528146}
+      - {x: -0.22115965, y: 0.03897856}
+      - {x: -0.20987606, y: -0.14978531}
+      - {x: 0.21894108, y: -0.15422241}
+      - {x: 0.21672255, y: 0.063072756}
+      - {x: 0.13444668, y: 0.18306303}
 --- !u!1001 &7488595312757283759
 PrefabInstance:
   m_ObjectHideFlags: 0
