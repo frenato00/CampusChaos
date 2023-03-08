@@ -35,7 +35,8 @@ public class Enemy : MonoBehaviour
 
     private void Swarm()
     {
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        if (player)
+            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -48,6 +49,6 @@ public class Enemy : MonoBehaviour
                 this.GetComponent<Health>().Damage(10000);
             }
         }
-        Debug.Log(collider);
+        // Debug.Log(collider);
     }
 }

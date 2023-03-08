@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Collectible : MonoBehaviour
+public class CollectibleChest : MonoBehaviour
 {
     [SerializeField]
-    private int health = 15;
+    private int money = 500;
 
     public GameObject pauseMenuUI;
 
@@ -23,7 +23,7 @@ public class Collectible : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider) {
         if (collider.CompareTag("Player")){
-                collider.GetComponent<Health>().Heal(health);
+                ScoreHandler.IncreaseScore(money);
             this.gameObject.SetActive(false);
         }
     }
