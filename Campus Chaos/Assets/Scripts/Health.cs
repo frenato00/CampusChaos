@@ -5,8 +5,12 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] private int health = 100;
+    [SerializeField] public GameOver gameOver;
+
+    [SerializeField] private HealthBar healthBar;
 
     private int MAX_HEALTH = 100;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +53,8 @@ public class Health : MonoBehaviour
         }
 
         health = Mathf.Max(0, health - amount);
+        if(healthBar)
+            healthBar.SetSize((float)this.health/this.MAX_HEALTH);
 
         if (health == 0)
         {
@@ -66,13 +72,18 @@ public class Health : MonoBehaviour
         }
 
         health = Mathf.Min(health + amount, MAX_HEALTH);
-
+        if(healthBar)
+            healthBar.SetSize((float)this.health/this.MAX_HEALTH);
         StartCoroutine(VisualIndicator(Color.green));
     }
 
     private void Die()
     {
-        Debug.Log("DDDDEEEEAAADDDD");
+        if(gameObject.tag=="Enemy"){
+            ScoreHandler.IncreaseScore(this.MAX_HEALTH);
+        }else if(gameObject.tag=="Player"){
+            gameOver.Pause();
+        }
         Destroy(gameObject);
     }
 }

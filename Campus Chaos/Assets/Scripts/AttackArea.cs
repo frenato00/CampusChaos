@@ -13,4 +13,8 @@ public class AttackArea : MonoBehaviour
             health.Damage(damage);
         }
     }
+
+    public void setDamage(int amount){
+        damage=amount;
+    }
 }

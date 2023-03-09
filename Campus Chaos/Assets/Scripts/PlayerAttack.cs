@@ -11,7 +11,12 @@ public class PlayerAttack : MonoBehaviour
     private float timeToAttack = 0.25f;
     private float timer = 0f;
 
-    private
+
+    private bool isPoweredUp = false;
+    private float powerTimeLimit=10f;
+    private float powerTimer = 0f;
+    [SerializeField] private HealthBar staminaBar;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,11 +40,28 @@ public class PlayerAttack : MonoBehaviour
                 attackArea.SetActive(attacking);
             }
         }
+        if(isPoweredUp){
+            powerTimer+=Time.deltaTime;
+            if(powerTimer>=powerTimeLimit){
+                powerTimer=0;
+                isPoweredUp=false;
+                attackArea.transform.GetComponent<AttackArea>().setDamage(10);
+            }
+            staminaBar.SetSize(1-(powerTimer/powerTimeLimit));
+        }else{
+            staminaBar.SetSize(0f);
+        }
     }
 
     private void Attack()
     {
         attacking = true;
         attackArea.SetActive(attacking);
+    }
+
+    public void Boost(){
+        powerTimer=0;
+        isPoweredUp=true;
+        attackArea.transform.GetComponent<AttackArea>().setDamage(20);
     }
 }

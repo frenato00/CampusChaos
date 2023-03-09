@@ -83,7 +83,7 @@ GameObject:
   - component: {fileID: 1643939182}
   m_Layer: 7
   m_Name: TeacherEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,7 +100,7 @@ Transform:
   m_LocalScale: {x: 1.8284261, y: 1.8284261, z: 1.8284261}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1049693374696539663}
+  - {fileID: 7113661704677893812}
   - {fileID: 8710527855467859489}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -191,6 +191,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  gameOver: {fileID: 0}
+  healthBar: {fileID: 5043508041008026165}
 --- !u!114 &5596339567345140774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -340,8 +342,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 033303cceffd9f465acaa8985e3b33a0, type: 3}
---- !u!4 &1049693374696539663 stripped
+--- !u!114 &5043508041008026165 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2455295320373954970, guid: 033303cceffd9f465acaa8985e3b33a0, type: 3}
+  m_PrefabInstance: {fileID: 7488595312757283759}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da5623d26d90bc74db07909d34aab5ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &7113661704677893812 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 7601398127372000672, guid: 033303cceffd9f465acaa8985e3b33a0, type: 3}
+  m_CorrespondingSourceObject: {fileID: 383958685273931035, guid: 033303cceffd9f465acaa8985e3b33a0, type: 3}
   m_PrefabInstance: {fileID: 7488595312757283759}
   m_PrefabAsset: {fileID: 0}
