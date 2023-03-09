@@ -10,7 +10,10 @@ public class PlayerAnimator : MonoBehaviour
     SpriteRenderer spriteRenderer;
 
     Transform healthBar;
-    float barX;
+    Transform staminaBar;
+    float healthX;
+    float staminaX;
+    float staminaXPos;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +21,10 @@ public class PlayerAnimator : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         healthBar = transform.Find("HealthBarPlayer");
-        barX = healthBar.transform.localScale.x;
+        staminaBar = transform.Find("StaminaBar");
+        healthX = healthBar.transform.localScale.x;
+        staminaX = staminaBar.transform.localScale.x;
+        staminaXPos = staminaBar.transform.localPosition.x;
     }
 
     // Update is called once per frame
@@ -38,11 +44,16 @@ public class PlayerAnimator : MonoBehaviour
     {
         if(playerMovement.lastHorizontalVector <0){
             transform.localScale = new Vector3(-1f, transform.localScale.y);
-            healthBar.transform.localScale = new Vector3(-1f*barX, healthBar.transform.localScale.y);
+            healthBar.transform.localScale = new Vector3(-1f*healthX, healthBar.transform.localScale.y);
+            staminaBar.transform.localScale = new Vector3(-1f*staminaX, staminaBar.transform.localScale.y);
+            staminaBar.transform.localPosition = new Vector3(-1f*staminaXPos, staminaBar.transform.localPosition.y);
         }
         else{
             transform.localScale = new Vector3(1f, transform.localScale.y);
-            healthBar.transform.localScale = new Vector3(barX, healthBar.transform.localScale.y);
+            healthBar.transform.localScale = new Vector3(healthX, healthBar.transform.localScale.y);
+            staminaBar.transform.localScale = new Vector3(staminaX, staminaBar.transform.localScale.y);
+            staminaBar.transform.localPosition = new Vector3(staminaXPos, staminaBar.transform.localPosition.y);
+
         }
     }
 }
