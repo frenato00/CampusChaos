@@ -32,8 +32,8 @@ public class EnemySpawner : MonoBehaviour
         {
             position = new Vector2(Random.Range(col.bounds.min.x, col.bounds.max.x), Random.Range(col.bounds.min.y, col.bounds.max.y));
         } while (!col.OverlapPoint(position));
-        if (GameObject.FindGameObjectsWithTag("Enemy").Length < 50)
+        if (GameObject.FindGameObjectsWithTag("Enemy").Length < 30)
             Instantiate(enemy, position, Quaternion.identity);
-        StartCoroutine(spawnEnemy(0.97f * interval, enemy));
+        StartCoroutine(spawnEnemy(Mathf.Max(0.98f * interval, 1.5f), enemy));
     }
 }
