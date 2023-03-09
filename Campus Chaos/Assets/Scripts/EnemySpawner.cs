@@ -10,27 +10,30 @@ public class EnemySpawner : MonoBehaviour
     private GameObject teacherPrefab;
 
     [SerializeField]
-    private float batInterval = 3.5f;
+    private float batInitialInterval = 3f;
     [SerializeField]
-    private float teacherInterval = 7f;
+    private float teacherInitialInterval = 6f;
 
-    private Collider2D collider2D;
+    private Collider2D col;
 
     // Start is called before the first frame update
     void Start()
     {
-        collider2D = GetComponent<Collider2D>();
-        StartCoroutine(spawnEnemy(batInterval, batPrefab));
-        StartCoroutine(spawnEnemy(teacherInterval, teacherPrefab));
+        col = GetComponent<Collider2D>();
+        StartCoroutine(spawnEnemy(batInitialInterval, batPrefab));
+        StartCoroutine(spawnEnemy(teacherInitialInterval, teacherPrefab));
     }
 
-    private IEnumerator spawnEnemy(float interval, GameObject enemy) {
+    private IEnumerator spawnEnemy(float interval, GameObject enemy)
+    {
         yield return new WaitForSeconds(interval);
         Vector3 position;
-        do {
-            position = new Vector2(Random.Range(collider2D.bounds.min.x, collider2D.bounds.max.x), Random.Range(collider2D.bounds.min.y, collider2D.bounds.max.y));
-        } while (!collider2D.OverlapPoint(position));
-        GameObject newEnemy = Instantiate(enemy, position, Quaternion.identity);
-        StartCoroutine(spawnEnemy(interval, enemy));
+        do
+        {
+            position = new Vector2(Random.Range(col.bounds.min.x, col.bounds.max.x), Random.Range(col.bounds.min.y, col.bounds.max.y));
+        } while (!col.OverlapPoint(position));
+        if (GameObject.FindGameObjectsWithTag("Enemy").Length < 50)
+            Instantiate(enemy, position, Quaternion.identity);
+        StartCoroutine(spawnEnemy(0.97f * interval, enemy));
     }
 }

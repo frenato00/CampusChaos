@@ -10,12 +10,14 @@ public class Health : MonoBehaviour
     [SerializeField] private HealthBar healthBar;
 
     private int MAX_HEALTH = 100;
+
+    private Color originalColor;
     
 
     // Start is called before the first frame update
     void Start()
     {
-
+        originalColor = GetComponent<SpriteRenderer>().color;
     }
 
     // Update is called once per frame
@@ -39,10 +41,9 @@ public class Health : MonoBehaviour
     }
 
     public IEnumerator VisualIndicator(Color color) {
-        Color prevColor = GetComponent<SpriteRenderer>().color;
         GetComponent<SpriteRenderer>().color = color;
         yield return new WaitForSeconds(0.2f);
-        GetComponent<SpriteRenderer>().color = prevColor;
+        GetComponent<SpriteRenderer>().color = originalColor;
     }
 
     public void Damage(int amount)
