@@ -6,7 +6,7 @@ public class Aim : MonoBehaviour
 {
     private bool isActive = false;
 
-    private int ACTIVE_DISTANCE = 2;
+    private int ACTIVE_DISTANCE = 5;
 
     [SerializeField]
     private GameObject throwable;
@@ -28,7 +28,7 @@ public class Aim : MonoBehaviour
     {
         UpdateDirection();
         transform.GetChild(0).gameObject.SetActive(isActive);
-        if (isActive && Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && GameObject.Find("Throwable(Clone)") == null)
         {
             Shoot();
         }
