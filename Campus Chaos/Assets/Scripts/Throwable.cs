@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Throwable : MonoBehaviour
 {
-    private int RETURN_SPEED = 20;
+    private int RETURN_SPEED = 25;
 
     private GameObject player;
     private bool left = false;
