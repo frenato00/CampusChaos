@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 3083751645089165810}
   - component: {fileID: 3995821439613033571}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Spoon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -498,7 +498,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2465103231614208568, guid: 45872061e7e05f85aacdb8b5d92f20e9, type: 3}
       propertyPath: launchForce
-      value: 15
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2465103231614208569, guid: 45872061e7e05f85aacdb8b5d92f20e9, type: 3}
       propertyPath: m_RootOrder

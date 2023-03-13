@@ -25,7 +25,6 @@ public class Throwable : MonoBehaviour
 
     private void Return()
     {
-        Debug.Log("Player: ", player);
         GetComponent<Rigidbody2D>().AddForce((player.transform.position - transform.position).normalized * RETURN_SPEED);
         // transform.position = Vector2.MoveTowards(transform.position, player.transform.position, RETURN_SPEED * Time.deltaTime);
     }
@@ -40,7 +39,6 @@ public class Throwable : MonoBehaviour
         {
             collider.GetComponent<Health>().Damage(damage);
         }
-        Debug.Log(collider);
     }
 
     private void OnTriggerExit2D(Collider2D collider)
