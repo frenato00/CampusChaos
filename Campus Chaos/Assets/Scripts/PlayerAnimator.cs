@@ -34,14 +34,17 @@ public class PlayerAnimator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerMovement.moveDir.x != 0 || playerMovement.moveDir.y != 0)
+        if (!PauseMenu.GameIsPaused)
         {
-            animator.SetBool("Move", true);
-            SpriteDirectionChecker();
-        }
-        else
-        {
-            animator.SetBool("Move", false);
+            if (playerMovement.moveDir.x != 0 || playerMovement.moveDir.y != 0)
+            {
+                animator.SetBool("Move", true);
+                SpriteDirectionChecker();
+            }
+            else
+            {
+                animator.SetBool("Move", false);
+            }
         }
     }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Throwable : MonoBehaviour
 {
-    private int RETURN_SPEED = 25;
+    private int RETURN_SPEED = 100;
 
     private GameObject player;
     private bool left = false;
@@ -18,9 +18,11 @@ public class Throwable : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        Return();
+        if(!PauseMenu.GameIsPaused){
+            Return();
+        }
     }
 
     private void Return()

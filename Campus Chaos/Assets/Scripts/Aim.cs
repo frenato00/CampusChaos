@@ -26,11 +26,13 @@ public class Aim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdateDirection();
-        transform.GetChild(0).gameObject.SetActive(isActive);
-        if (Input.GetMouseButtonDown(0) && GameObject.Find("Throwable(Clone)") == null)
-        {
-            Shoot();
+        if(!PauseMenu.GameIsPaused){
+            UpdateDirection();
+            transform.GetChild(0).gameObject.SetActive(isActive);
+            if (Input.GetMouseButtonDown(0) && GameObject.Find("Throwable(Clone)") == null)
+            {
+                Shoot();
+            }
         }
     }
 
